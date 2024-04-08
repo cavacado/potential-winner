@@ -22,7 +22,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 Google analytics testing:
 
-- using @next/third-parties
+- manual installation of GA4
 - testing for enhanced measurements:
   - page_view
   - scroll

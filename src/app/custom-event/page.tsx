@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { sendGAEvent } from "@next/third-parties/google";
 import { DataLayer } from "../_components/DataLayer";
 import { randomInt } from "../_utils/randomInt";
 
@@ -13,9 +12,9 @@ export default function CustomEvent() {
       <button
         onClick={() => {
           setFingerPrint(randomInt());
-          sendGAEvent("event", "custom_event", {
-            value: "coolcoolcool",
-          });
+          // sendGAEvent("event", "custom_event", {
+          //   value: "coolcoolcool",
+          // });
         }}
       >
         send custom event
