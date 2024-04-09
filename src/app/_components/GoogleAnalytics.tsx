@@ -26,7 +26,7 @@ export function GoogleAnalytics(props: GoogleAnalyticsProps) {
           function gtag(){window['${dataLayerName}'].push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', '${gaId}', ${GA_CONFIG_OPTION});`,
+          gtag('config', '${gaId}', ${JSON.stringify(GA_CONFIG_OPTION)});`,
         }}
       />
       <Script
