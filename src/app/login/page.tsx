@@ -1,4 +1,5 @@
 "use client";
+import { gaEvent } from "../_utils/analytics";
 import { login } from "../actions/login";
 
 export default function Login() {
@@ -19,9 +20,9 @@ export default function Login() {
           <input
             type="submit"
             value="Login"
-            // onClick={() => {
-            //   sendGAEvent("event", "login", { method: "cookie" });
-            // }}
+            onClick={() => {
+              gaEvent({ action: "login",method: "cookie" });
+            }}
           />
         </div>
       </form>
