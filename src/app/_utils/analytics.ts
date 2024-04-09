@@ -9,9 +9,9 @@ export const GA_CONFIG_OPTION = {
 
 interface GaEventProps {
   action: string;
-  category: string;
+  category?: string;
   label?: string;
-  value?: number;
+  value?: any;
 }
 
 interface GaPageViewProps {
