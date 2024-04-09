@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { DataLayer } from "../_components/DataLayer";
-import { randomInt } from "../_utils/randomInt";
+import { random } from "../_utils";
 
 export default function CustomEvent() {
   const [fingerprint, setFingerPrint] = React.useState<number>(0);
@@ -11,7 +11,7 @@ export default function CustomEvent() {
       <br />
       <button
         onClick={() => {
-          setFingerPrint(randomInt());
+          setFingerPrint(random.randomInt());
           // sendGAEvent("event", "custom_event", {
           //   value: "coolcoolcool",
           // });

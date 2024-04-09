@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Script from "next/script";
-import { GA_CONFIG_OPTION } from "../_utils/analytics";
+import { analytics } from "../_utils";
 
 interface GoogleAnalyticsProps {
   gaId: string;
@@ -26,7 +26,9 @@ export function GoogleAnalytics(props: GoogleAnalyticsProps) {
           function gtag(){window['${dataLayerName}'].push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', '${gaId}', ${JSON.stringify(GA_CONFIG_OPTION)});`,
+          gtag('config', '${gaId}', ${JSON.stringify(
+            analytics.GA_CONFIG_OPTION
+          )});`,
         }}
       />
       <Script

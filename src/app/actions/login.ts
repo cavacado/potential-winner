@@ -1,7 +1,7 @@
 "use server";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { randomInt } from "../_utils/randomInt";
+import { random } from "../_utils";
 
 export async function login(formData: FormData) {
   // unused because for demo only
@@ -10,6 +10,6 @@ export async function login(formData: FormData) {
     password: formData.get("password"),
   };
   console.log(rawFormData);
-  cookies().set("authorised", randomInt().toString());
+  cookies().set("authorised", random.randomInt().toString());
   redirect("/");
 }

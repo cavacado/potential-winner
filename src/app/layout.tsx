@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import { GoogleAnalytics } from "./_components/GoogleAnalytics";
+import { Suspense } from "react";
+import { NavigationEvents } from "./_components/NavigationEvents";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +23,7 @@ export default function RootLayout({
         {process.env.GA_MEASUREMENT_ID && (
           <GoogleAnalytics gaId={process.env.GA_MEASUREMENT_ID} />
         )}
-    </head>
+      </head>
       <body
         className={inter.className}
         style={{
@@ -38,6 +40,9 @@ export default function RootLayout({
         >
           <Link href="/">Back to Home</Link>
         </footer>
+        <Suspense fallback={null}>
+          <NavigationEvents />
+        </Suspense>
       </body>
     </html>
   );
