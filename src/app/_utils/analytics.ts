@@ -4,6 +4,7 @@ type GaActionDefault = "page_view";
 export const GA_CONFIG_OPTION = {
   allow_google_signals: false,
   allow_ad_personalization_signals: false,
+  debug_mode: true
 };
 
 interface GaEventProps {
