@@ -15,6 +15,7 @@ export default function Embed() {
         dangerouslySetInnerHTML={{
           __html: sanitiseRawHtml(embed, {
             ADD_TAGS: ["iframe"],
+            ADD_ATTR: ["enablejsapi"],
           }),
         }}
       />
