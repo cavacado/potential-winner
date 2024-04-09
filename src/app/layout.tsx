@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import { GoogleAnalytics } from "./_components/GoogleAnalytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {process.env.GA_MEASUREMENT_ID && (
+          <GoogleAnalytics gaId={process.env.GA_MEASUREMENT_ID} />
+        )}
+    </head>
       <body
         className={inter.className}
         style={{
