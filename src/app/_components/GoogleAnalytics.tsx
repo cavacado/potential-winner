@@ -19,6 +19,7 @@ export function GoogleAnalytics(props: GoogleAnalyticsProps) {
   return (
     <>
       <Script
+        id={"gtag-1"}
         dangerouslySetInnerHTML={{
           __html: `
           window['${dataLayerName}'] = window['${dataLayerName}'] || [];
@@ -29,6 +30,7 @@ export function GoogleAnalytics(props: GoogleAnalyticsProps) {
         }}
       />
       <Script
+        id={"gtag-2"}
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
       />
