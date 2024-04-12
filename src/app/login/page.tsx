@@ -20,7 +20,8 @@ export default function Login() {
           <input
             type="submit"
             value="Login"
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
               gaEvent({ action: "login",method: "cookie" });
             }}
           />
